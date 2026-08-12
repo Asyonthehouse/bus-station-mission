@@ -96,7 +96,7 @@ body::before {
 
     position: relative;
 
-    z-index: 1;
+    z-index: 2;
 
     text-align: center;
 
@@ -127,7 +127,6 @@ body::before {
     height: 170px;
 
     border:
-
     4px solid
     #ff8fba;
 
@@ -137,7 +136,6 @@ body::before {
     rgba(255,255,255,0.15);
 
     box-shadow:
-
     0 10px 25px
     rgba(255,79,118,0.20);
 
@@ -175,12 +173,10 @@ h1 {
     letter-spacing: 0.3px;
 
     text-shadow:
-
     2px 2px 0px
     rgba(255,255,255,0.95);
 
     margin:
-
     5px 0 35px;
 
 }
@@ -215,16 +211,13 @@ button {
     min-width: 105px;
 
     border:
-
     2px solid
     #ee3976;
 
     padding:
-
     13px 28px;
 
     font-family:
-
     "Fredoka",
     Arial,
     sans-serif;
@@ -238,9 +231,7 @@ button {
     cursor: pointer;
 
     transition:
-
     transform 0.15s ease,
-
     box-shadow 0.15s ease;
 
 }
@@ -263,7 +254,6 @@ button:hover {
     color: white;
 
     box-shadow:
-
     0 7px 15px
     rgba(238,57,118,0.25);
 
@@ -280,7 +270,6 @@ button:hover {
     color: #aa174d;
 
     box-shadow:
-
     0 7px 15px
     rgba(238,57,118,0.10);
 
@@ -308,48 +297,109 @@ button:hover {
 
     padding: 20px;
 
-    background:
+    overflow: hidden;
 
+    background:
     linear-gradient(
 
-    180deg,
+        180deg,
 
-    #fff1f6 0%,
+        rgba(255,241,246,0.76) 0%,
 
-    #ffd7e7 100%
+        rgba(255,215,231,0.76) 100%
 
+    );
+
+    backdrop-filter:
+    blur(2px);
+
+}
+
+
+
+/* =========================
+   FLOATING PERSON
+   POPUP ONLY
+========================= */
+
+.floating-person {
+
+    position: absolute;
+
+    left: 72%;
+
+    bottom: -35px;
+
+    z-index: 1;
+
+    pointer-events: none;
+
+    animation:
+    floatPerson
+    3.5s
+    ease-in-out
+    infinite;
+
+}
+
+
+.floating-person img {
+
+    width:
+    clamp(
+        300px,
+        38vw,
+        550px
+    );
+
+    max-height: 85vh;
+
+    object-fit: contain;
+
+    opacity: 0.92;
+
+    filter:
+    drop-shadow(
+        0 15px 25px
+        rgba(0,0,0,0.20)
     );
 
 }
 
 
+
+/* =========================
+   POPUP CARD
+========================= */
+
 .popup {
+
+    position: relative;
+
+    z-index: 2;
 
     width: 90%;
 
     max-width: 390px;
 
-    background: white;
+    background:
+    rgba(255,255,255,0.96);
 
     border-radius: 28px;
 
     padding:
-
     38px 25px 28px;
 
     text-align: center;
 
     box-shadow:
-
     0 15px 45px
     rgba(255,79,118,0.20);
 
     animation:
-
     pop 0.4s ease;
 
 }
-
 
 
 .heart {
@@ -357,11 +407,9 @@ button:hover {
     font-size: 55px;
 
     animation:
-
     heartbeat 1s infinite;
 
 }
-
 
 
 .popup h1 {
@@ -371,13 +419,11 @@ button:hover {
     font-size: 32px;
 
     margin:
-
     10px 0 8px;
 
     text-shadow: none;
 
 }
-
 
 
 .small {
@@ -403,7 +449,6 @@ button:hover {
     background: #fff4f8;
 
     border:
-
     2px dashed
     #ff8faf;
 
@@ -438,7 +483,6 @@ button:hover {
     line-height: 1.35;
 
     margin:
-
     12px 0;
 
 }
@@ -456,7 +500,6 @@ button:hover {
     color: white;
 
     padding:
-
     11px 20px;
 
     border-radius: 100px;
@@ -484,7 +527,6 @@ button:hover {
 }
 
 
-
 .terms {
 
     margin-top: 10px;
@@ -510,12 +552,10 @@ button:hover {
     color: #ee3976;
 
     border:
-
     2px solid
     #ff8faf;
 
     padding:
-
     10px 22px;
 
     font-size: 15px;
@@ -525,7 +565,6 @@ button:hover {
     min-width: 0;
 
     box-shadow:
-
     0 5px 15px
     rgba(238,57,118,0.10);
 
@@ -541,42 +580,57 @@ button:hover {
 
 
 /* =========================
-   MUSIC INDICATOR
+   MUSIC BUTTON
 ========================= */
 
 .music-indicator {
+
     position: fixed;
+
     bottom: 22px;
+
     right: 22px;
 
     z-index: 2000;
 
     background: #ff4380;
+
     color: white;
 
-    padding: 13px 20px;
+    padding:
+    13px 20px;
 
-    border: 3px solid white;
+    border:
+    3px solid white;
+
     border-radius: 100px;
 
     font-size: 16px;
+
     font-weight: 600;
 
     box-shadow:
-        0 6px 18px rgba(0,0,0,0.15);
+    0 6px 18px
+    rgba(0,0,0,0.15);
 
-    backdrop-filter: blur(8px);
+    backdrop-filter:
+    blur(8px);
 
     cursor: pointer;
 
     transition:
-        transform 0.15s ease,
-        background 0.15s ease;
+    transform 0.15s ease,
+    background 0.15s ease;
+
 }
 
+
 .music-indicator:hover {
+
     transform: scale(1.05);
-    background: white;
+
+    background: #ff5b91;
+
 }
 
 
@@ -640,6 +694,34 @@ button:hover {
 
 
 
+/* PERSON FLOATING */
+
+@keyframes floatPerson {
+
+    0%,
+    100% {
+
+        transform:
+        translateX(-50%)
+        translateY(0px)
+        rotate(-1deg);
+
+    }
+
+
+    50% {
+
+        transform:
+        translateX(-50%)
+        translateY(-18px)
+        rotate(1deg);
+
+    }
+
+}
+
+
+
 /* =========================
    MOBILE
 ========================= */
@@ -687,10 +769,47 @@ button:hover {
         min-width: 95px;
 
         padding:
-
         12px 22px;
 
         font-size: 17px;
+
+    }
+
+
+    /* FLOATING PERSON PHONE */
+
+    .floating-person {
+
+        left: 78%;
+
+        bottom: -15px;
+
+    }
+
+
+    .floating-person img {
+
+        width: 320px;
+
+        max-height: 68vh;
+
+        opacity: 0.88;
+
+    }
+
+
+    /* MUSIC PHONE */
+
+    .music-indicator {
+
+        right: 15px;
+
+        bottom: 15px;
+
+        font-size: 15px;
+
+        padding:
+        12px 17px;
 
     }
 
@@ -733,11 +852,8 @@ id="mainScreen">
 
 
         <img
-
         src="cute.gif"
-
         class="character"
-
         alt="Cute GIF">
 
 
@@ -788,6 +904,24 @@ id="mainScreen">
 <div
 id="popupScreen">
 
+
+    <!-- FLOATING PERSON
+         ONLY VISIBLE HERE -->
+
+    <div
+    class="floating-person">
+
+
+        <img
+        src="person.png?v=2"
+        alt="Person">
+
+
+    </div>
+
+
+
+    <!-- POPUP CARD -->
 
     <div
     class="popup">
@@ -896,7 +1030,9 @@ id="popupScreen">
 
 
 
-<!-- MUSIC BUTTON -->
+<!-- =========================
+     MUSIC BUTTON
+========================= -->
 
 <div
 class="music-indicator"
@@ -973,17 +1109,23 @@ function startMusic() {
 
     .then(() => {
 
+
         musicStarted = true;
+
 
         musicButton.innerText =
         "🎵 Aziz Playing";
 
+
     })
+
 
     .catch(() => {
 
+
         musicButton.innerText =
         "🎵 Tap for music";
+
 
     });
 
@@ -999,7 +1141,9 @@ window.addEventListener(
 
 () => {
 
+
     startMusic();
+
 
 }
 
@@ -1007,8 +1151,7 @@ window.addEventListener(
 
 
 
-/* IF AUTOPLAY IS BLOCKED,
-   START AFTER FIRST INTERACTION */
+/* PLAY AFTER FIRST INTERACTION */
 
 document.addEventListener(
 
@@ -1048,7 +1191,9 @@ musicButton.addEventListener(
 
         music.play();
 
+
         musicStarted = true;
+
 
         musicButton.innerText =
         "🎵 Music Playing";
@@ -1061,7 +1206,9 @@ musicButton.addEventListener(
 
         music.pause();
 
+
         musicStarted = false;
+
 
         musicButton.innerText =
         "🔇 Music OFF";
@@ -1118,6 +1265,7 @@ function moveNoButton() {
 
 
         count++;
+
 
     }
 
@@ -1294,7 +1442,7 @@ returnButton.addEventListener(
     count = 0;
 
 
-    /* PUT NO BUTTON BACK */
+    /* RESET NO BUTTON */
 
     noButton.style.position =
     "";
