@@ -545,40 +545,38 @@ button:hover {
 ========================= */
 
 .music-indicator {
-
     position: fixed;
-
-    bottom: 15px;
-
-    right: 15px;
+    bottom: 22px;
+    right: 22px;
 
     z-index: 2000;
 
-    background:
+    background: #ff4380;
+    color: white;
 
-    rgba(255,255,255,0.75);
+    padding: 13px 20px;
 
-    color: #d6336c;
-
-    padding:
-
-    8px 12px;
-
+    border: 3px solid white;
     border-radius: 100px;
 
-    font-size: 12px;
+    font-size: 16px;
+    font-weight: 600;
 
     box-shadow:
+        0 6px 18px rgba(0,0,0,0.15);
 
-    0 4px 15px
-    rgba(0,0,0,0.08);
-
-    backdrop-filter:
-
-    blur(6px);
+    backdrop-filter: blur(8px);
 
     cursor: pointer;
 
+    transition:
+        transform 0.15s ease,
+        background 0.15s ease;
+}
+
+.music-indicator:hover {
+    transform: scale(1.05);
+    background: white;
 }
 
 
@@ -978,7 +976,7 @@ function startMusic() {
         musicStarted = true;
 
         musicButton.innerText =
-        "🎵 Playing";
+        "🎵 Aziz Playing";
 
     })
 
@@ -1053,7 +1051,7 @@ musicButton.addEventListener(
         musicStarted = true;
 
         musicButton.innerText =
-        "🎵 Playing";
+        "🎵 Music Playing";
 
 
     }
@@ -1066,7 +1064,7 @@ musicButton.addEventListener(
         musicStarted = false;
 
         musicButton.innerText =
-        "🔇 Music off";
+        "🔇 Music OFF";
 
 
     }
@@ -1084,7 +1082,7 @@ musicButton.addEventListener(
 
 const messages = [
 
-    "Are you sure? 🥺",
+    "Are you sure? Syg 🥺",
 
     "Really sure?? 😭",
 
@@ -1092,9 +1090,9 @@ const messages = [
 
     "Wrong answer 😔",
 
-    "Pleaseee 😭",
+    "Pleaseee bb 😭",
 
-    "COME ONNN 😭💗"
+    "COME ONNN BB 😭💗"
 
 ];
 
