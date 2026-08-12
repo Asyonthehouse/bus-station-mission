@@ -36,42 +36,35 @@ rel="stylesheet">
 
 
 body {
-
     margin: 0;
 
     min-height: 100vh;
 
     display: flex;
-
     justify-content: center;
-
     align-items: center;
 
     font-family:
-    "Fredoka",
-    Arial,
-    sans-serif;
+        "Fredoka",
+        Arial,
+        sans-serif;
 
     background-image:
-    url("background.jpg?v=5");
+        url("background.jpg?v=5");
 
     background-size: cover;
-
     background-position: center;
-
     background-repeat: no-repeat;
 
     overflow: hidden;
 
     position: relative;
-
 }
 
 
 /* LIGHT OVERLAY */
 
 body::before {
-
     content: "";
 
     position: fixed;
@@ -79,12 +72,11 @@ body::before {
     inset: 0;
 
     background:
-    rgba(255,255,255,0.04);
+        rgba(255,255,255,0.04);
 
     z-index: 0;
 
     pointer-events: none;
-
 }
 
 
@@ -94,7 +86,6 @@ body::before {
 ========================= */
 
 .card {
-
     position: relative;
 
     z-index: 2;
@@ -102,11 +93,9 @@ body::before {
     text-align: center;
 
     width: 92%;
-
     max-width: 600px;
 
     padding: 20px;
-
 }
 
 
@@ -116,45 +105,38 @@ body::before {
 ========================= */
 
 .character-frame {
-
     display: inline-flex;
 
     justify-content: center;
-
     align-items: center;
 
     width: 170px;
-
     height: 170px;
 
     border:
-    4px solid
-    #ff8fba;
+        4px solid
+        #ff8fba;
 
     border-radius: 22px;
 
     background:
-    rgba(255,255,255,0.15);
+        rgba(255,255,255,0.15);
 
     box-shadow:
-    0 10px 25px
-    rgba(255,79,118,0.20);
+        0 10px 25px
+        rgba(255,79,118,0.20);
 
     margin-bottom: 25px;
-
 }
 
 
 .character {
-
     width: 135px;
-
     height: 135px;
 
     object-fit: cover;
 
     border-radius: 15px;
-
 }
 
 
@@ -164,7 +146,6 @@ body::before {
 ========================= */
 
 h1 {
-
     font-size: 34px;
 
     font-weight: 600;
@@ -174,12 +155,11 @@ h1 {
     letter-spacing: 0.3px;
 
     text-shadow:
-    2px 2px 0px
-    rgba(255,255,255,0.95);
+        2px 2px 0px
+        rgba(255,255,255,0.95);
 
     margin:
-    5px 0 35px;
-
+        5px 0 35px;
 }
 
 
@@ -189,39 +169,34 @@ h1 {
 ========================= */
 
 .buttons {
-
     display: flex;
 
     justify-content: center;
-
     align-items: center;
 
     gap: 20px;
 
     width: 100%;
-
     height: 100px;
 
     position: relative;
-
 }
 
 
 button {
-
     min-width: 105px;
 
     border:
-    2px solid
-    #ee3976;
+        2px solid
+        #ee3976;
 
     padding:
-    13px 28px;
+        13px 28px;
 
     font-family:
-    "Fredoka",
-    Arial,
-    sans-serif;
+        "Fredoka",
+        Arial,
+        sans-serif;
 
     font-size: 18px;
 
@@ -232,16 +207,13 @@ button {
     cursor: pointer;
 
     transition:
-    transform 0.15s ease,
-    box-shadow 0.15s ease;
-
+        transform 0.15s ease,
+        box-shadow 0.15s ease;
 }
 
 
 button:hover {
-
     transform: scale(1.06);
-
 }
 
 
@@ -249,15 +221,13 @@ button:hover {
 /* YES */
 
 #yes {
-
     background: #ff4380;
 
     color: white;
 
     box-shadow:
-    0 7px 15px
-    rgba(238,57,118,0.25);
-
+        0 7px 15px
+        rgba(238,57,118,0.25);
 }
 
 
@@ -265,15 +235,13 @@ button:hover {
 /* NO */
 
 #no {
-
     background: #ffe7f0;
 
     color: #aa174d;
 
     box-shadow:
-    0 7px 15px
-    rgba(238,57,118,0.10);
-
+        0 7px 15px
+        rgba(238,57,118,0.10);
 }
 
 
@@ -283,7 +251,6 @@ button:hover {
 ========================= */
 
 #popupScreen {
-
     position: fixed;
 
     inset: 0;
@@ -293,78 +260,73 @@ button:hover {
     display: none;
 
     justify-content: center;
-
     align-items: center;
 
     padding: 20px;
 
     overflow: hidden;
 
+    /*
+       This is the popup background.
+       Person 1 + Person 2 sit ABOVE this,
+       but BELOW the white popup card.
+    */
+
     background:
-    linear-gradient(
-
-        180deg,
-
-        rgba(255,241,246,0.76) 0%,
-
-        rgba(255,215,231,0.76) 100%
-
-    );
+        linear-gradient(
+            180deg,
+            rgba(255,241,246,0.76) 0%,
+            rgba(255,215,231,0.76) 100%
+        );
 
     backdrop-filter:
-    blur(2px);
-
+        blur(2px);
 }
 
 
 
 /* =========================
    PERSON 1
-   ORIGINAL BOTTOM RIGHT
+   BOTTOM RIGHT
 ========================= */
 
 .floating-person {
-
     position: absolute;
 
-    left: 72%;
-
-    bottom: -35px;
+    right: 40px;
+    bottom: -10px;
 
     z-index: 1;
 
     pointer-events: none;
 
     animation:
-    floatPerson
-    3.5s
-    ease-in-out
-    infinite;
-
+        floatPerson
+        3.5s
+        ease-in-out
+        infinite;
 }
 
 
 .floating-person img {
-
     width:
-    clamp(
-        300px,
-        38vw,
-        550px
-    );
+        clamp(
+            280px,
+            32vw,
+            470px
+        );
 
-    max-height: 85vh;
+    max-height: 66vh;
 
     object-fit: contain;
 
-    opacity: 0.92;
+    opacity: 0.96;
 
     filter:
-    drop-shadow(
-        0 15px 25px
-        rgba(0,0,0,0.20)
-    );
-
+        drop-shadow(
+            0 15px 25px
+            rgba(0,0,0,0.18)
+        );
 }
 
 
@@ -375,57 +337,52 @@ button:hover {
 ========================= */
 
 .floating-person-2 {
-
     position: absolute;
 
-    left: 5%;
-
-    top: 20px;
+    left: 35px;
+    top: 35px;
 
     z-index: 1;
 
     pointer-events: none;
 
     animation:
-    floatPerson2
-    4s
-    ease-in-out
-    infinite;
-
+        floatPerson2
+        4s
+        ease-in-out
+        infinite;
 }
 
 
 .floating-person-2 img {
-
     width:
-    clamp(
-        260px,
-        30vw,
-        450px
-    );
+        clamp(
+            230px,
+            26vw,
+            390px
+        );
 
-    max-height: 65vh;
+    max-height: 50vh;
 
     object-fit: contain;
 
-    opacity: 0.92;
+    opacity: 0.96;
 
     filter:
-    drop-shadow(
-        0 15px 25px
-        rgba(0,0,0,0.18)
-    );
-
+        drop-shadow(
+            0 15px 25px
+            rgba(0,0,0,0.16)
+        );
 }
 
 
 
 /* =========================
    POPUP CARD
+   ABOVE BOTH PEOPLE
 ========================= */
 
 .popup {
-
     position: relative;
 
     z-index: 2;
@@ -435,51 +392,47 @@ button:hover {
     max-width: 390px;
 
     background:
-    rgba(255,255,255,0.96);
+        rgba(255,255,255,0.96);
 
     border-radius: 28px;
 
     padding:
-    38px 25px 28px;
+        38px 25px 28px;
 
     text-align: center;
 
     box-shadow:
-    0 15px 45px
-    rgba(255,79,118,0.20);
+        0 15px 45px
+        rgba(255,79,118,0.20);
 
     animation:
-    pop 0.4s ease;
-
+        pop 0.4s ease;
 }
 
 
 .heart {
-
     font-size: 55px;
 
     animation:
-    heartbeat 1s infinite;
-
+        heartbeat
+        1s
+        infinite;
 }
 
 
 .popup h1 {
-
     color: #ff4380;
 
     font-size: 32px;
 
     margin:
-    10px 0 8px;
+        10px 0 8px;
 
     text-shadow: none;
-
 }
 
 
 .small {
-
     color: #777;
 
     font-size: 16px;
@@ -487,7 +440,6 @@ button:hover {
     line-height: 1.5;
 
     margin-top: 5px;
-
 }
 
 
@@ -497,35 +449,30 @@ button:hover {
 ========================= */
 
 .mission {
-
     background: #fff4f8;
 
     border:
-    2px dashed
-    #ff8faf;
+        2px dashed
+        #ff8faf;
 
     border-radius: 20px;
 
     padding: 20px;
 
     margin-top: 22px;
-
 }
 
 
 .mission p {
-
     color: #ff4380;
 
     font-weight: 600;
 
     margin-top: 0;
-
 }
 
 
 .mission h2 {
-
     font-size: 22px;
 
     font-weight: 600;
@@ -535,16 +482,16 @@ button:hover {
     line-height: 1.35;
 
     margin:
-    12px 0;
-
+        12px 0;
 }
 
 
 
-/* DATE */
+/* =========================
+   DATE
+========================= */
 
 .date {
-
     display: inline-block;
 
     background: #ff4380;
@@ -552,7 +499,7 @@ button:hover {
     color: white;
 
     padding:
-    11px 20px;
+        11px 20px;
 
     border-radius: 100px;
 
@@ -561,32 +508,29 @@ button:hover {
     font-weight: 600;
 
     margin-top: 8px;
-
 }
 
 
 
-/* WARNING */
+/* =========================
+   WARNING
+========================= */
 
 .warning {
-
     margin-top: 22px;
 
     color: #444;
 
     font-weight: 600;
-
 }
 
 
 .terms {
-
     margin-top: 10px;
 
     font-size: 12px;
 
     color: #aaa;
-
 }
 
 
@@ -596,7 +540,6 @@ button:hover {
 ========================= */
 
 .return-btn {
-
     margin-top: 15px;
 
     background: white;
@@ -604,11 +547,11 @@ button:hover {
     color: #ee3976;
 
     border:
-    2px solid
-    #ff8faf;
+        2px solid
+        #ff8faf;
 
     padding:
-    10px 22px;
+        10px 22px;
 
     font-size: 15px;
 
@@ -617,16 +560,13 @@ button:hover {
     min-width: 0;
 
     box-shadow:
-    0 5px 15px
-    rgba(238,57,118,0.10);
-
+        0 5px 15px
+        rgba(238,57,118,0.10);
 }
 
 
 .return-btn:hover {
-
     background: #fff3f7;
-
 }
 
 
@@ -636,11 +576,9 @@ button:hover {
 ========================= */
 
 .music-indicator {
-
     position: fixed;
 
     bottom: 22px;
-
     right: 22px;
 
     z-index: 2000;
@@ -650,10 +588,10 @@ button:hover {
     color: white;
 
     padding:
-    13px 20px;
+        13px 20px;
 
     border:
-    3px solid white;
+        3px solid white;
 
     border-radius: 100px;
 
@@ -662,27 +600,24 @@ button:hover {
     font-weight: 600;
 
     box-shadow:
-    0 6px 18px
-    rgba(0,0,0,0.15);
+        0 6px 18px
+        rgba(0,0,0,0.15);
 
     backdrop-filter:
-    blur(8px);
+        blur(8px);
 
     cursor: pointer;
 
     transition:
-    transform 0.15s ease,
-    background 0.15s ease;
-
+        transform 0.15s ease,
+        background 0.15s ease;
 }
 
 
 .music-indicator:hover {
-
     transform: scale(1.05);
 
     background: #ff5b91;
-
 }
 
 
@@ -694,30 +629,24 @@ button:hover {
 @keyframes pop {
 
     0% {
-
         transform:
-        scale(0.6);
+            scale(0.6);
 
         opacity: 0;
-
     }
 
 
     80% {
-
         transform:
-        scale(1.05);
-
+            scale(1.05);
     }
 
 
     100% {
-
         transform:
-        scale(1);
+            scale(1);
 
         opacity: 1;
-
     }
 
 }
@@ -732,18 +661,14 @@ button:hover {
 
     0%,
     100% {
-
         transform:
-        scale(1);
-
+            scale(1);
     }
 
 
     50% {
-
         transform:
-        scale(1.15);
-
+            scale(1.15);
     }
 
 }
@@ -758,22 +683,16 @@ button:hover {
 
     0%,
     100% {
-
         transform:
-        translateX(-50%)
-        translateY(0px)
-        rotate(-1deg);
-
+            translateY(0px)
+            rotate(-1deg);
     }
 
 
     50% {
-
         transform:
-        translateX(-50%)
-        translateY(-18px)
-        rotate(1deg);
-
+            translateY(-18px)
+            rotate(1deg);
     }
 
 }
@@ -788,20 +707,16 @@ button:hover {
 
     0%,
     100% {
-
         transform:
-        translateY(0px)
-        rotate(1deg);
-
+            translateY(0px)
+            rotate(1deg);
     }
 
 
     50% {
-
         transform:
-        translateY(-16px)
-        rotate(-1deg);
-
+            translateY(-14px)
+            rotate(-1deg);
     }
 
 }
@@ -817,99 +732,87 @@ button:hover {
 
 
     .character-frame {
-
         width: 145px;
-
         height: 145px;
-
     }
 
 
     .character {
-
         width: 115px;
-
         height: 115px;
-
     }
 
 
     h1 {
-
         font-size: 28px;
 
         margin-bottom: 28px;
-
     }
 
 
     .buttons {
-
         gap: 16px;
-
     }
 
 
     button {
-
         min-width: 95px;
 
         padding:
-        12px 22px;
+            12px 22px;
 
         font-size: 17px;
-
     }
 
 
-    /* PERSON 1 MOBILE */
+
+    /* =====================
+       PERSON 1 MOBILE
+       BOTTOM RIGHT
+    ===================== */
 
     .floating-person {
+        right: -30px;
 
-        left: 78%;
-
-        bottom: -15px;
-
+        bottom: 5px;
     }
 
 
     .floating-person img {
+        width: 240px;
 
-        width: 320px;
+        max-height: 42vh;
 
-        max-height: 68vh;
-
-        opacity: 0.88;
-
+        opacity: 0.94;
     }
 
 
-    /* PERSON 2 MOBILE */
+
+    /* =====================
+       PERSON 2 MOBILE
+       TOP LEFT
+    ===================== */
 
     .floating-person-2 {
+        left: -20px;
 
-        left: -45px;
-
-        top: 15px;
-
+        top: 25px;
     }
 
 
     .floating-person-2 img {
+        width: 175px;
 
-        width: 230px;
+        max-height: 30vh;
 
-        max-height: 43vh;
-
-        opacity: 0.86;
-
+        opacity: 0.94;
     }
+
 
 
     /* MUSIC MOBILE */
 
     .music-indicator {
-
         right: 15px;
 
         bottom: 15px;
@@ -917,8 +820,7 @@ button:hover {
         font-size: 15px;
 
         padding:
-        12px 17px;
-
+            12px 17px;
     }
 
 }
@@ -1008,56 +910,52 @@ id="mainScreen">
      YES POPUP
 ========================= -->
 
-<div
-id="popupScreen">
-
-
-    <!-- =====================
-         PERSON 1
-         ORIGINAL BOTTOM RIGHT
-    ====================== -->
-
-    <div
-    class="floating-person">
-
-
-        <img
-        src="person.png?v=2"
-        alt="Person">
-
-
-    </div>
-
+<div id="popupScreen">
 
 
     <!-- =====================
          PERSON 2
          TOP LEFT
+         BETWEEN BACKGROUND
+         AND POPUP
     ====================== -->
 
-    <div
-    class="floating-person-2">
-
+    <div class="floating-person-2">
 
         <img
-        src="person2.png?v=1"
+        src="person2.png?v=2"
         alt="Person 2">
-
 
     </div>
 
 
 
     <!-- =====================
-         POPUP CARD
+         PERSON 1
+         BOTTOM RIGHT
+         BETWEEN BACKGROUND
+         AND POPUP
     ====================== -->
 
-    <div
-    class="popup">
+    <div class="floating-person">
+
+        <img
+        src="person.png?v=3"
+        alt="Person 1">
+
+    </div>
 
 
-        <div
-        class="heart">
+
+    <!-- =====================
+         WHITE POPUP CARD
+         ABOVE BOTH IMAGES
+    ====================== -->
+
+    <div class="popup">
+
+
+        <div class="heart">
 
             🎉
 
@@ -1073,8 +971,7 @@ id="popupScreen">
 
 
 
-        <p
-        class="small">
+        <p class="small">
 
             By clicking
 
@@ -1087,8 +984,7 @@ id="popupScreen">
 
 
 
-        <div
-        class="mission">
+        <div class="mission">
 
 
             <p>
@@ -1111,8 +1007,7 @@ id="popupScreen">
 
 
 
-            <div
-            class="date">
+            <div class="date">
 
                 14/8 • 12:00 AM
 
@@ -1123,8 +1018,7 @@ id="popupScreen">
 
 
 
-        <p
-        class="warning">
+        <p class="warning">
 
             No cancellations
             allowed 😌💗
@@ -1133,8 +1027,7 @@ id="popupScreen">
 
 
 
-        <p
-        class="terms">
+        <p class="terms">
 
             Terms & conditions
             accepted automatically ✓
@@ -1243,7 +1136,7 @@ function startMusic() {
 
 
         musicButton.innerText =
-        "🎵 Aziz Playing";
+            "🎵 Aziz Playing";
 
 
     })
@@ -1253,7 +1146,7 @@ function startMusic() {
 
 
         musicButton.innerText =
-        "🎵 Tap for music";
+            "🎵 Tap for music";
 
 
     });
@@ -1306,7 +1199,9 @@ startMusic,
 
 
 
-/* MUSIC TOGGLE */
+/* =========================
+   MUSIC TOGGLE
+========================= */
 
 musicButton.addEventListener(
 
@@ -1325,7 +1220,7 @@ musicButton.addEventListener(
 
 
         musicButton.innerText =
-        "🎵 Music Playing";
+            "🎵 Music Playing";
 
 
     }
@@ -1340,7 +1235,7 @@ musicButton.addEventListener(
 
 
         musicButton.innerText =
-        "🔇 Music OFF";
+            "🔇 Music OFF";
 
 
     }
@@ -1394,7 +1289,7 @@ function moveNoButton() {
 
 
         question.innerText =
-        messages[count];
+            messages[count];
 
 
         count++;
@@ -1410,74 +1305,74 @@ function moveNoButton() {
 
     const maxX =
 
-    window.innerWidth
+        window.innerWidth
 
-    -
+        -
 
-    noButton.offsetWidth
+        noButton.offsetWidth
 
-    -
+        -
 
-    padding;
+        padding;
 
 
 
     const maxY =
 
-    window.innerHeight
+        window.innerHeight
 
-    -
+        -
 
-    noButton.offsetHeight
+        noButton.offsetHeight
 
-    -
+        -
 
-    padding;
+        padding;
 
 
 
     const x =
 
-    Math.max(
+        Math.max(
 
-        padding,
+            padding,
 
-        Math.random()
-        *
-        maxX
+            Math.random()
+            *
+            maxX
 
-    );
+        );
 
 
 
     const y =
 
-    Math.max(
+        Math.max(
 
-        padding,
+            padding,
 
-        Math.random()
-        *
-        maxY
+            Math.random()
+            *
+            maxY
 
-    );
+        );
 
 
 
     noButton.style.position =
-    "fixed";
+        "fixed";
 
 
     noButton.style.left =
-    x + "px";
+        x + "px";
 
 
     noButton.style.top =
-    y + "px";
+        y + "px";
 
 
     noButton.style.zIndex =
-    "999";
+        "999";
 
 }
 
@@ -1534,11 +1429,11 @@ yesButton.addEventListener(
 
 
     mainScreen.style.display =
-    "none";
+        "none";
 
 
     popupScreen.style.display =
-    "flex";
+        "flex";
 
 
 }
@@ -1559,17 +1454,17 @@ returnButton.addEventListener(
 
 
     popupScreen.style.display =
-    "none";
+        "none";
 
 
     mainScreen.style.display =
-    "block";
+        "block";
 
 
     /* RESET QUESTION */
 
     question.innerText =
-    "Will you go out with me? 🥺";
+        "Will you go out with me? 🥺";
 
 
     count = 0;
@@ -1578,19 +1473,19 @@ returnButton.addEventListener(
     /* RESET NO BUTTON */
 
     noButton.style.position =
-    "";
+        "";
 
 
     noButton.style.left =
-    "";
+        "";
 
 
     noButton.style.top =
-    "";
+        "";
 
 
     noButton.style.zIndex =
-    "";
+        "";
 
 
 }
