@@ -1,61 +1,113 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
 
 <title>Open pls 👀</title>
 
-<!-- Cute rounded font -->
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<!-- CUTE FONT -->
+<link rel="preconnect"
+href="https://fonts.googleapis.com">
+
+<link rel="preconnect"
+href="https://fonts.gstatic.com"
+crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&display=swap"
+rel="stylesheet">
+
 
 <style>
+
+/* =========================
+   GENERAL
+========================= */
 
 * {
     box-sizing: border-box;
 }
 
+
 body {
+
     margin: 0;
+
     min-height: 100vh;
 
     display: flex;
+
     justify-content: center;
+
     align-items: center;
 
-    font-family: "Fredoka", Arial, sans-serif;
+    font-family:
+    "Fredoka",
+    Arial,
+    sans-serif;
 
-    background-image: url("background.jpg");
+    background-image:
+    url("background.jpg?v=5");
+
     background-size: cover;
+
     background-position: center;
+
     background-repeat: no-repeat;
 
     overflow: hidden;
+
     position: relative;
+
 }
 
-/* Slight overlay */
+
+/* LIGHT OVERLAY */
+
 body::before {
+
     content: "";
-    position: absolute;
+
+    position: fixed;
+
     inset: 0;
-    background: rgba(255,255,255,0.05);
+
+    background:
+    rgba(255,255,255,0.04);
+
     z-index: 0;
+
+    pointer-events: none;
+
 }
+
+
+
+/* =========================
+   MAIN CARD
+========================= */
 
 .card {
+
     position: relative;
+
     z-index: 1;
 
     text-align: center;
 
     width: 92%;
+
     max-width: 600px;
 
     padding: 20px;
+
 }
+
 
 
 /* =========================
@@ -63,32 +115,49 @@ body::before {
 ========================= */
 
 .character-frame {
+
     display: inline-flex;
+
     justify-content: center;
+
     align-items: center;
 
     width: 170px;
+
     height: 170px;
 
-    border: 4px solid #ff8fba;
+    border:
+
+    4px solid
+    #ff8fba;
+
     border-radius: 22px;
 
-    background: rgba(255,255,255,0.15);
+    background:
+    rgba(255,255,255,0.15);
 
     box-shadow:
-        0 10px 25px rgba(255,79,118,0.20);
+
+    0 10px 25px
+    rgba(255,79,118,0.20);
 
     margin-bottom: 25px;
+
 }
 
+
 .character {
+
     width: 135px;
+
     height: 135px;
 
     object-fit: cover;
 
     border-radius: 15px;
+
 }
+
 
 
 /* =========================
@@ -96,7 +165,9 @@ body::before {
 ========================= */
 
 h1 {
+
     font-size: 34px;
+
     font-weight: 600;
 
     color: #ee3976;
@@ -104,39 +175,62 @@ h1 {
     letter-spacing: 0.3px;
 
     text-shadow:
-        2px 2px 0px rgba(255,255,255,0.95);
 
-    margin: 5px 0 35px;
+    2px 2px 0px
+    rgba(255,255,255,0.95);
+
+    margin:
+
+    5px 0 35px;
+
 }
+
 
 
 /* =========================
-   BUTTONS
+   BUTTON AREA
 ========================= */
 
 .buttons {
+
     display: flex;
+
     justify-content: center;
+
     align-items: center;
 
-    gap: 18px;
+    gap: 20px;
 
     width: 100%;
+
     height: 100px;
 
     position: relative;
+
 }
 
+
 button {
+
     min-width: 105px;
 
-    border: 2px solid #ee3976;
+    border:
 
-    padding: 13px 28px;
+    2px solid
+    #ee3976;
 
-    font-family: "Fredoka", Arial, sans-serif;
+    padding:
+
+    13px 28px;
+
+    font-family:
+
+    "Fredoka",
+    Arial,
+    sans-serif;
 
     font-size: 18px;
+
     font-weight: 600;
 
     border-radius: 14px;
@@ -144,94 +238,150 @@ button {
     cursor: pointer;
 
     transition:
-        transform 0.15s ease,
-        box-shadow 0.15s ease;
+
+    transform 0.15s ease,
+
+    box-shadow 0.15s ease;
+
 }
 
+
 button:hover {
+
     transform: scale(1.06);
+
 }
+
 
 
 /* YES */
 
 #yes {
+
     background: #ff4380;
+
     color: white;
 
     box-shadow:
-        0 7px 15px rgba(238,57,118,0.25);
+
+    0 7px 15px
+    rgba(238,57,118,0.25);
+
 }
+
 
 
 /* NO */
 
 #no {
+
     background: #ffe7f0;
+
     color: #aa174d;
 
     box-shadow:
-        0 7px 15px rgba(238,57,118,0.10);
+
+    0 7px 15px
+    rgba(238,57,118,0.10);
+
 }
+
 
 
 /* =========================
-   FINAL POPUP
+   POPUP SCREEN
 ========================= */
 
-.popup-bg {
-    width: 100vw;
-    height: 100vh;
+#popupScreen {
 
-    background:
-        linear-gradient(
-            180deg,
-            #fff1f6 0%,
-            #ffd7e7 100%
-        );
+    position: fixed;
 
-    display: flex;
+    inset: 0;
+
+    z-index: 1000;
+
+    display: none;
+
     justify-content: center;
+
     align-items: center;
 
     padding: 20px;
+
+    background:
+
+    linear-gradient(
+
+    180deg,
+
+    #fff1f6 0%,
+
+    #ffd7e7 100%
+
+    );
+
 }
 
+
 .popup {
+
     width: 90%;
+
     max-width: 390px;
 
     background: white;
 
     border-radius: 28px;
 
-    padding: 38px 25px;
+    padding:
+
+    38px 25px 28px;
 
     text-align: center;
 
     box-shadow:
-        0 15px 45px rgba(255,79,118,0.20);
 
-    animation: pop 0.4s ease;
+    0 15px 45px
+    rgba(255,79,118,0.20);
+
+    animation:
+
+    pop 0.4s ease;
+
 }
+
+
 
 .heart {
+
     font-size: 55px;
 
-    animation: heartbeat 1s infinite;
+    animation:
+
+    heartbeat 1s infinite;
+
 }
 
+
+
 .popup h1 {
+
     color: #ff4380;
 
     font-size: 32px;
 
-    margin: 10px 0 8px;
+    margin:
+
+    10px 0 8px;
 
     text-shadow: none;
+
 }
 
+
+
 .small {
+
     color: #777;
 
     font-size: 16px;
@@ -239,79 +389,198 @@ button:hover {
     line-height: 1.5;
 
     margin-top: 5px;
+
 }
 
 
-/* AGREEMENT BOX */
+
+/* =========================
+   AGREEMENT BOX
+========================= */
 
 .mission {
+
     background: #fff4f8;
 
-    border: 2px dashed #ff8faf;
+    border:
+
+    2px dashed
+    #ff8faf;
 
     border-radius: 20px;
 
     padding: 20px;
 
     margin-top: 22px;
+
 }
 
+
 .mission p {
+
     color: #ff4380;
 
     font-weight: 600;
 
     margin-top: 0;
+
 }
 
+
 .mission h2 {
+
     font-size: 22px;
+
     font-weight: 600;
 
     color: #333;
 
     line-height: 1.35;
 
-    margin: 12px 0;
+    margin:
+
+    12px 0;
+
 }
+
 
 
 /* DATE */
 
 .date {
+
     display: inline-block;
 
     background: #ff4380;
+
     color: white;
 
-    padding: 11px 20px;
+    padding:
+
+    11px 20px;
 
     border-radius: 100px;
 
     font-size: 17px;
+
     font-weight: 600;
 
     margin-top: 8px;
+
 }
+
 
 
 /* WARNING */
 
 .warning {
+
     margin-top: 22px;
 
     color: #444;
 
     font-weight: 600;
+
 }
 
+
+
 .terms {
+
     margin-top: 10px;
 
     font-size: 12px;
 
     color: #aaa;
+
 }
+
+
+
+/* =========================
+   RETURN BUTTON
+========================= */
+
+.return-btn {
+
+    margin-top: 15px;
+
+    background: white;
+
+    color: #ee3976;
+
+    border:
+
+    2px solid
+    #ff8faf;
+
+    padding:
+
+    10px 22px;
+
+    font-size: 15px;
+
+    border-radius: 100px;
+
+    min-width: 0;
+
+    box-shadow:
+
+    0 5px 15px
+    rgba(238,57,118,0.10);
+
+}
+
+
+.return-btn:hover {
+
+    background: #fff3f7;
+
+}
+
+
+
+/* =========================
+   MUSIC INDICATOR
+========================= */
+
+.music-indicator {
+
+    position: fixed;
+
+    bottom: 15px;
+
+    right: 15px;
+
+    z-index: 2000;
+
+    background:
+
+    rgba(255,255,255,0.75);
+
+    color: #d6336c;
+
+    padding:
+
+    8px 12px;
+
+    border-radius: 100px;
+
+    font-size: 12px;
+
+    box-shadow:
+
+    0 4px 15px
+    rgba(0,0,0,0.08);
+
+    backdrop-filter:
+
+    blur(6px);
+
+    cursor: pointer;
+
+}
+
 
 
 /* =========================
@@ -321,102 +590,321 @@ button:hover {
 @keyframes pop {
 
     0% {
-        transform: scale(0.6);
+
+        transform:
+        scale(0.6);
+
         opacity: 0;
+
     }
+
 
     80% {
-        transform: scale(1.05);
+
+        transform:
+        scale(1.05);
+
     }
 
+
     100% {
-        transform: scale(1);
+
+        transform:
+        scale(1);
+
         opacity: 1;
+
     }
 
 }
+
+
 
 @keyframes heartbeat {
 
-    0%, 100% {
-        transform: scale(1);
+    0%,
+    100% {
+
+        transform:
+        scale(1);
+
     }
 
+
     50% {
-        transform: scale(1.15);
+
+        transform:
+        scale(1.15);
+
     }
 
 }
+
 
 
 /* =========================
    MOBILE
 ========================= */
 
-@media (max-width: 500px) {
+@media
+(max-width: 500px) {
+
 
     .character-frame {
+
         width: 145px;
+
         height: 145px;
+
     }
+
 
     .character {
+
         width: 115px;
+
         height: 115px;
+
     }
+
 
     h1 {
+
         font-size: 28px;
+
         margin-bottom: 28px;
+
     }
+
 
     .buttons {
-        gap: 14px;
+
+        gap: 16px;
+
     }
 
+
     button {
+
         min-width: 95px;
-        padding: 12px 22px;
+
+        padding:
+
+        12px 22px;
+
         font-size: 17px;
+
     }
+
 
 }
 
 </style>
+
 </head>
+
 
 
 <body>
 
-<div class="card">
 
-    <div class="character-frame">
+<!-- =========================
+     MUSIC
+========================= -->
+
+<audio
+id="bgMusic"
+src="song.mp3"
+loop
+preload="auto">
+</audio>
+
+
+
+<!-- =========================
+     MAIN SCREEN
+========================= -->
+
+<div
+class="card"
+id="mainScreen">
+
+
+    <div
+    class="character-frame">
+
 
         <img
-            src="cute.gif"
-            class="character"
-            alt="Cute GIF"
-        >
+
+        src="cute.gif"
+
+        class="character"
+
+        alt="Cute GIF">
+
 
     </div>
 
 
-    <h1 id="question">
+
+    <h1
+    id="question">
+
         Will you go out with me? 🥺
+
     </h1>
 
 
-    <div class="buttons">
 
-        <button id="yes">
+    <div
+    class="buttons">
+
+
+        <button
+        id="yes">
+
             YES 💗
+
         </button>
 
-        <button id="no">
+
+        <button
+        id="no">
+
             No
+
         </button>
+
 
     </div>
+
+
+</div>
+
+
+
+<!-- =========================
+     YES POPUP
+========================= -->
+
+<div
+id="popupScreen">
+
+
+    <div
+    class="popup">
+
+
+        <div
+        class="heart">
+
+            🎉
+
+        </div>
+
+
+
+        <h1>
+
+            Congratulations!
+
+        </h1>
+
+
+
+        <p
+        class="small">
+
+            By clicking
+
+            <b>YES</b>,
+
+            you have officially
+            agreed to:
+
+        </p>
+
+
+
+        <div
+        class="mission">
+
+
+            <p>
+
+                💗 YOUR AGREEMENT 💗
+
+            </p>
+
+
+
+            <h2>
+
+                Pick me up at the
+
+                <br>
+
+                bus station 🚌
+
+            </h2>
+
+
+
+            <div
+            class="date">
+
+                14/8 • 12:00 AM
+
+            </div>
+
+
+        </div>
+
+
+
+        <p
+        class="warning">
+
+            No cancellations
+            allowed 😌💗
+
+        </p>
+
+
+
+        <p
+        class="terms">
+
+            Terms & conditions
+            accepted automatically ✓
+
+        </p>
+
+
+
+        <button
+        class="return-btn"
+        id="returnButton">
+
+            ← Return
+
+        </button>
+
+
+    </div>
+
+
+</div>
+
+
+
+<!-- MUSIC BUTTON -->
+
+<div
+class="music-indicator"
+id="musicButton">
+
+    🎵 Music
 
 </div>
 
@@ -424,15 +912,175 @@ button:hover {
 
 <script>
 
+
+/* =========================
+   VARIABLES
+========================= */
+
 const noButton =
-    document.getElementById("no");
+document.getElementById("no");
+
 
 const yesButton =
-    document.getElementById("yes");
+document.getElementById("yes");
+
 
 const question =
-    document.getElementById("question");
+document.getElementById("question");
 
+
+const mainScreen =
+document.getElementById("mainScreen");
+
+
+const popupScreen =
+document.getElementById("popupScreen");
+
+
+const returnButton =
+document.getElementById("returnButton");
+
+
+const music =
+document.getElementById("bgMusic");
+
+
+const musicButton =
+document.getElementById("musicButton");
+
+
+
+/* =========================
+   MUSIC
+========================= */
+
+music.volume = 0.45;
+
+
+let musicStarted = false;
+
+
+
+function startMusic() {
+
+
+    if (musicStarted) {
+
+        return;
+
+    }
+
+
+    music.play()
+
+    .then(() => {
+
+        musicStarted = true;
+
+        musicButton.innerText =
+        "🎵 Playing";
+
+    })
+
+    .catch(() => {
+
+        musicButton.innerText =
+        "🎵 Tap for music";
+
+    });
+
+}
+
+
+
+/* TRY AUTOPLAY */
+
+window.addEventListener(
+
+"load",
+
+() => {
+
+    startMusic();
+
+}
+
+);
+
+
+
+/* IF AUTOPLAY IS BLOCKED,
+   START AFTER FIRST INTERACTION */
+
+document.addEventListener(
+
+"pointerdown",
+
+startMusic,
+
+{ once: true }
+
+);
+
+
+
+document.addEventListener(
+
+"keydown",
+
+startMusic,
+
+{ once: true }
+
+);
+
+
+
+/* MUSIC TOGGLE */
+
+musicButton.addEventListener(
+
+"click",
+
+() => {
+
+
+    if (music.paused) {
+
+
+        music.play();
+
+        musicStarted = true;
+
+        musicButton.innerText =
+        "🎵 Playing";
+
+
+    }
+
+    else {
+
+
+        music.pause();
+
+        musicStarted = false;
+
+        musicButton.innerText =
+        "🔇 Music off";
+
+
+    }
+
+
+}
+
+);
+
+
+
+/* =========================
+   NO BUTTON
+========================= */
 
 const messages = [
 
@@ -457,80 +1105,137 @@ let count = 0;
 
 function moveNoButton() {
 
-    /* Change question */
 
-    if (count < messages.length) {
+    if (
+
+        count
+        <
+        messages.length
+
+    ) {
+
 
         question.innerText =
-            messages[count];
+        messages[count];
+
 
         count++;
 
     }
 
 
-    /* Safe screen area */
 
     const padding = 20;
 
+
+
     const maxX =
-        window.innerWidth -
-        noButton.offsetWidth -
-        padding;
+
+    window.innerWidth
+
+    -
+
+    noButton.offsetWidth
+
+    -
+
+    padding;
+
+
 
     const maxY =
-        window.innerHeight -
-        noButton.offsetHeight -
-        padding;
+
+    window.innerHeight
+
+    -
+
+    noButton.offsetHeight
+
+    -
+
+    padding;
+
 
 
     const x =
-        Math.max(
-            padding,
-            Math.random() * maxX
-        );
+
+    Math.max(
+
+        padding,
+
+        Math.random()
+        *
+        maxX
+
+    );
+
+
 
     const y =
-        Math.max(
-            padding,
-            Math.random() * maxY
-        );
+
+    Math.max(
+
+        padding,
+
+        Math.random()
+        *
+        maxY
+
+    );
 
 
-    /* Make NO escape */
 
-    noButton.style.position = "fixed";
+    noButton.style.position =
+    "fixed";
+
 
     noButton.style.left =
-        x + "px";
+    x + "px";
+
 
     noButton.style.top =
-        y + "px";
+    y + "px";
 
-    noButton.style.zIndex = "999";
+
+    noButton.style.zIndex =
+    "999";
 
 }
 
 
-/* Desktop */
+
+/* DESKTOP */
 
 noButton.addEventListener(
-    "mouseover",
-    moveNoButton
+
+"mouseover",
+
+moveNoButton
+
 );
 
 
-/* Mobile */
+
+/* MOBILE */
 
 noButton.addEventListener(
-    "touchstart",
-    function(e) {
 
-        e.preventDefault();
+"touchstart",
 
-        moveNoButton();
+function(e) {
 
-    }
+
+    e.preventDefault();
+
+
+    startMusic();
+
+
+    moveNoButton();
+
+
+}
+
 );
 
 
@@ -540,90 +1245,83 @@ noButton.addEventListener(
 ========================= */
 
 yesButton.addEventListener(
-    "click",
-    () => {
 
-        document.body.innerHTML = `
+"click",
 
-        <div class="popup-bg">
-
-            <div class="popup">
+() => {
 
 
-                <div class="heart">
-                    🎉
-                </div>
+    startMusic();
 
 
-                <h1>
-                    Congratulations!
-                </h1>
+    mainScreen.style.display =
+    "none";
 
 
-                <p class="small">
-
-                    By clicking
-                    <b>YES</b>,
-
-                    you have officially
-                    agreed to:
-
-                </p>
+    popupScreen.style.display =
+    "flex";
 
 
-                <div class="mission">
+}
 
-                    <p>
-                        💗 YOUR AGREEMENT 💗
-                    </p>
-
-
-                    <h2>
-
-                        Pick me up at the
-                        <br>
-
-                        bus station 🚌
-
-                    </h2>
-
-
-                    <div class="date">
-
-                        14/8 • 12:00 AM
-
-                    </div>
-
-                </div>
-
-
-                <p class="warning">
-
-                    No cancellations
-                    allowed 😌💗
-
-                </p>
-
-
-                <p class="terms">
-
-                    Terms & conditions
-                    accepted automatically ✓
-
-                </p>
-
-
-            </div>
-
-        </div>
-
-        `;
-
-    }
 );
+
+
+
+/* =========================
+   RETURN BUTTON
+========================= */
+
+returnButton.addEventListener(
+
+"click",
+
+() => {
+
+
+    popupScreen.style.display =
+    "none";
+
+
+    mainScreen.style.display =
+    "block";
+
+
+    /* RESET QUESTION */
+
+    question.innerText =
+    "Will you go out with me? 🥺";
+
+
+    count = 0;
+
+
+    /* PUT NO BUTTON BACK */
+
+    noButton.style.position =
+    "";
+
+
+    noButton.style.left =
+    "";
+
+
+    noButton.style.top =
+    "";
+
+
+    noButton.style.zIndex =
+    "";
+
+
+}
+
+);
+
 
 </script>
 
 
 </body>
+
 </html>
