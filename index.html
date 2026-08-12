@@ -3,7 +3,6 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>Open pls 👀</title>
 
 <style>
@@ -13,59 +12,118 @@
 
 body {
     margin: 0;
-    height: 100vh;
+    min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
     font-family: Arial, sans-serif;
-    background: #fff5f7;
+    background-image: url("background.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
     overflow: hidden;
+    position: relative;
+}
+
+/* soft overlay so text can be seen better */
+body::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(255, 240, 246, 0.15);
+    z-index: 0;
 }
 
 .card {
+    position: relative;
+    z-index: 1;
     text-align: center;
+    width: 90%;
+    max-width: 500px;
+    padding: 20px;
+}
+
+.character-frame {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 170px;
+    height: 170px;
+    background: rgba(255, 255, 255, 0.15);
+    border: 4px solid #ff99bd;
+    border-radius: 22px;
+    box-shadow: 0 10px 25px rgba(255, 79, 118, 0.25);
+    margin-bottom: 22px;
+    backdrop-filter: blur(2px);
+}
+
+.character {
+    width: 135px;
+    height: 135px;
+    object-fit: contain;
+    border-radius: 16px;
 }
 
 h1 {
-    font-size: 28px;
+    font-size: 32px;
+    line-height: 1.15;
+    color: #d6336c;
+    text-shadow: 2px 2px 0 #fff;
+    margin: 10px 0 24px;
 }
 
 .buttons {
-    margin-top: 30px;
     position: relative;
-    height: 150px;
+    width: 280px;
+    height: 120px;
+    margin: 0 auto;
 }
 
 button {
-    border: none;
-    padding: 14px 30px;
+    border: 2px solid #d94b7b;
+    padding: 12px 28px;
     font-size: 18px;
+    font-weight: bold;
     border-radius: 12px;
     cursor: pointer;
+    transition: transform 0.15s ease;
+}
+
+button:hover {
+    transform: scale(1.05);
 }
 
 #yes {
-    background: #ff4f76;
+    background: #ff4f85;
     color: white;
+    position: absolute;
+    left: 45px;
+    top: 20px;
+    box-shadow: 0 6px 14px rgba(255, 79, 133, 0.35);
 }
 
 #no {
-    background: #ddd;
+    background: #ffe0ea;
+    color: #9d2451;
     position: absolute;
-    margin-left: 15px;
+    left: 155px;
+    top: 20px;
+}
 
+/* popup screen */
 .popup-bg {
     width: 100vw;
     height: 100vh;
-    background: #fff0f5;
+    background: linear-gradient(180deg, #fff0f6 0%, #ffd9e8 100%);
     display: flex;
     justify-content: center;
     align-items: center;
+    padding: 20px;
 }
 
 .popup {
-    width: 85%;
-    max-width: 350px;
+    width: 90%;
+    max-width: 380px;
     background: white;
     border-radius: 25px;
     padding: 35px 25px;
@@ -82,10 +140,13 @@ button {
 .popup h1 {
     color: #ff4f76;
     margin-bottom: 5px;
+    text-shadow: none;
 }
 
 .small {
     color: #888;
+    margin-top: 8px;
+    line-height: 1.4;
 }
 
 .mission {
@@ -99,11 +160,14 @@ button {
 .mission p {
     color: #ff4f76;
     font-weight: bold;
+    margin-top: 0;
 }
 
 .mission h2 {
-    font-size: 21px;
+    font-size: 22px;
     margin: 12px 0;
+    color: #333;
+    line-height: 1.3;
 }
 
 .date {
@@ -113,11 +177,19 @@ button {
     padding: 10px 18px;
     border-radius: 20px;
     font-weight: bold;
+    margin-top: 6px;
 }
 
 .warning {
     margin-top: 20px;
     font-weight: bold;
+    color: #444;
+}
+
+.terms {
+    margin-top: 10px;
+    font-size: 12px;
+    color: #999;
 }
 
 @keyframes pop {
@@ -125,11 +197,9 @@ button {
         transform: scale(0.6);
         opacity: 0;
     }
-
     80% {
         transform: scale(1.05);
     }
-
     100% {
         transform: scale(1);
         opacity: 1;
@@ -140,11 +210,9 @@ button {
     0%, 100% {
         transform: scale(1);
     }
-
     50% {
-        transform: scale(1.2);
+        transform: scale(1.15);
     }
-}
 }
 </style>
 </head>
@@ -152,28 +220,19 @@ button {
 <body>
 
 <div class="card">
-
-    <h1 id="question">
-        Will you go out with me? 🥺
-    </h1>
-
-    <div class="buttons">
-
-        <button id="yes">
-            YES ❤️
-        </button>
-
-        <button id="no">
-            No
-        </button>
-
+    <div class="character-frame">
+        <img src="cute.gif" class="character" alt="Cute GIF">
     </div>
 
+    <h1 id="question">Will you go out with me? 🥺</h1>
+
+    <div class="buttons">
+        <button id="yes">YES ❤️</button>
+        <button id="no">No</button>
+    </div>
 </div>
 
-
 <script>
-
 const noButton = document.getElementById("no");
 const yesButton = document.getElementById("yes");
 const question = document.getElementById("question");
@@ -190,25 +249,28 @@ const messages = [
 let count = 0;
 
 function moveNoButton() {
-
     if (count < messages.length) {
         question.innerText = messages[count];
         count++;
     }
 
-    const x =
-        Math.random() * (window.innerWidth - 120);
+    const maxX = window.innerWidth - noButton.offsetWidth - 20;
+    const maxY = window.innerHeight - noButton.offsetHeight - 20;
 
-    const y =
-        Math.random() * (window.innerHeight - 60);
+    const x = Math.random() * maxX;
+    const y = Math.random() * maxY;
 
     noButton.style.position = "fixed";
     noButton.style.left = x + "px";
     noButton.style.top = y + "px";
+    noButton.style.zIndex = "999";
 }
 
 noButton.addEventListener("mouseover", moveNoButton);
-noButton.addEventListener("touchstart", moveNoButton);
+noButton.addEventListener("touchstart", function(e) {
+    e.preventDefault();
+    moveNoButton();
+});
 
 yesButton.addEventListener("click", () => {
     document.body.innerHTML = `
@@ -238,11 +300,14 @@ yesButton.addEventListener("click", () => {
                 <p class="warning">
                     No cancellations allowed 😌💗
                 </p>
+
+                <p class="terms">
+                    Terms & conditions accepted automatically ✓
+                </p>
             </div>
         </div>
     `;
 });
-
 </script>
 
 </body>
