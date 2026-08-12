@@ -53,6 +53,98 @@ button {
     background: #ddd;
     position: absolute;
     margin-left: 15px;
+
+.popup-bg {
+    width: 100vw;
+    height: 100vh;
+    background: #fff0f5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.popup {
+    width: 85%;
+    max-width: 350px;
+    background: white;
+    border-radius: 25px;
+    padding: 35px 25px;
+    text-align: center;
+    box-shadow: 0 15px 40px rgba(255, 79, 118, 0.2);
+    animation: pop 0.4s ease;
+}
+
+.heart {
+    font-size: 50px;
+    animation: heartbeat 1s infinite;
+}
+
+.popup h1 {
+    color: #ff4f76;
+    margin-bottom: 5px;
+}
+
+.small {
+    color: #888;
+}
+
+.mission {
+    background: #fff5f7;
+    border: 2px dashed #ff8fab;
+    border-radius: 18px;
+    padding: 18px;
+    margin-top: 20px;
+}
+
+.mission p {
+    color: #ff4f76;
+    font-weight: bold;
+}
+
+.mission h2 {
+    font-size: 21px;
+    margin: 12px 0;
+}
+
+.date {
+    display: inline-block;
+    background: #ff4f76;
+    color: white;
+    padding: 10px 18px;
+    border-radius: 20px;
+    font-weight: bold;
+}
+
+.warning {
+    margin-top: 20px;
+    font-weight: bold;
+}
+
+@keyframes pop {
+    0% {
+        transform: scale(0.6);
+        opacity: 0;
+    }
+
+    80% {
+        transform: scale(1.05);
+    }
+
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes heartbeat {
+    0%, 100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.2);
+    }
+}
 }
 </style>
 </head>
